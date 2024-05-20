@@ -14,7 +14,7 @@ const PatientSelector: React.FC<PatientSelectorProps> = ({ patients, selectedPat
 
   return (
     <div>
-      <Typography variant="h6" gutterBottom>Selecionar Paciente</Typography>
+      <Typography variant="h4" fontWeight='bold' gutterBottom>Selecionar Paciente</Typography>
       <FormControl fullWidth variant="outlined" sx={{ marginTop: 2 }}>
         <InputLabel id="patient-select-label">Paciente</InputLabel>
         <Select

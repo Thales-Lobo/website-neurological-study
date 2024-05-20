@@ -5,13 +5,13 @@ interface DomainSelectorProps {
   domainOptions: string[];
   selectedDomain: string[];
   onSelect: (domain: string) => void;
-  domainColors: { [key: string]: string }; // Add a prop for domain colors
+  domainColors: { [key: string]: string };
 }
 
 const DomainSelector: React.FC<DomainSelectorProps> = ({ domainOptions, selectedDomain, onSelect, domainColors }) => {
   return (
     <div>
-      <Typography variant="h6" gutterBottom>Domínios</Typography>
+      <Typography variant="h5" fontWeight='bold' gutterBottom>Domínios</Typography>
       <FormGroup>
         {domainOptions.map(domain => (
           <FormControlLabel
