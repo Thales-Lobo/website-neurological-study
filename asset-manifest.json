@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/website-neurological-study/static/css/main.aeb8a079.css",
-    "main.js": "/website-neurological-study/static/js/main.d91a56e3.js",
+    "main.js": "/website-neurological-study/static/js/main.98d50469.js",
     "static/js/453.11d7ae91.chunk.js": "/website-neurological-study/static/js/453.11d7ae91.chunk.js",
     "static/media/logo.png": "/website-neurological-study/static/media/logo.8255a0a6352e23f8f2d1.png",
     "index.html": "/website-neurological-study/index.html",
     "main.aeb8a079.css.map": "/website-neurological-study/static/css/main.aeb8a079.css.map",
-    "main.d91a56e3.js.map": "/website-neurological-study/static/js/main.d91a56e3.js.map",
+    "main.98d50469.js.map": "/website-neurological-study/static/js/main.98d50469.js.map",
     "453.11d7ae91.chunk.js.map": "/website-neurological-study/static/js/453.11d7ae91.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aeb8a079.css",
-    "static/js/main.d91a56e3.js"
+    "static/js/main.98d50469.js"
   ]
 }
