@@ -1,8 +1,8 @@
 import { API_KEY, SPREADSHEET_ID } from './config';
 
 // Define the ranges for the date column and the main data range in the spreadsheet
-const SPREADSHEET_DATE_VALUE_RANGE = 'Paciente A!A4:A20';
-const SPREADSHEET_DATA_RANGE = 'Paciente A!AW4:BD20';
+const SPREADSHEET_DATE_VALUE_RANGE = 'Antes!A4:A20';
+const SPREADSHEET_DATA_RANGE = 'Antes!AW4:BD20';
 
 /**
  * Load data from a Google Sheets spreadsheet.

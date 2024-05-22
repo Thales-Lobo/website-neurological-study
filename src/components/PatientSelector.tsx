@@ -23,7 +23,7 @@ const PatientSelector: React.FC<PatientSelectorProps> = ({ patients, selectedPat
           onChange={handleChange}
           label="Paciente"
         >
-          <MenuItem value="">Selecionar Paciente</MenuItem> {"Selecionar Paciente"}
+          <MenuItem value=""><em>Selecionar Paciente</em></MenuItem>
           {patients.map((patient) => (
             <MenuItem key={patient} value={patient}>
               {patient}

@@ -1,4 +1,3 @@
-// Dashboard.tsx
 // React Hooks
 import React, { useState, useEffect } from 'react';
 // Material Components
@@ -11,6 +10,7 @@ import ChartComponent from './ChartComponent';
 import AddButton from './AddButton';
 // Local Structures
 import data_labels from '../structures/data_labels.json';
+import design from '../structures/design.json';
 // General Imports
 import Chart from 'chart.js/auto';
 import { CategoryScale } from 'chart.js';
@@ -21,9 +21,7 @@ const PATIENTS_OPTIONS = data_labels.patients;
 const DOMAINS_OPTIONS = data_labels.domains;
 
 const PATIENTS_OPTIONS_SORTED = [...PATIENTS_OPTIONS].sort((a, b) => a.localeCompare(b));
-const COLOR_PALETTE = [
-  '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#FF6384', '#36A2EB'
-];
+const COLOR_PALETTE = design.color_palette;
 
 const domainColors = DOMAINS_OPTIONS.reduce((acc, domain, index) => {
   acc[domain] = COLOR_PALETTE[index % COLOR_PALETTE.length];
@@ -52,14 +50,18 @@ const Dashboard: React.FC = () => {
 
   const chartData = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    datasets: selectedDomain.map((dataOption) => ({
+    datasets: selectedDomain.length > 0 ? selectedDomain.map((dataOption) => ({
       label: dataOption,
-      //TODO: Mock Data
       data: Array.from({ length: 12 }, () => Math.floor(Math.random() * 100)),
       borderColor: domainColors[dataOption],
       backgroundColor: domainColors[dataOption],
       fill: false,
-    })),
+    })) : [{
+      label: 'No Data',
+      data: [],
+      borderColor: 'rgba(0,0,0,0)',
+      backgroundColor: 'rgba(0,0,0,0)',
+    }],
   };
 
   return (
@@ -80,7 +82,9 @@ const Dashboard: React.FC = () => {
           </Paper>
         </Grid>
         <Grid item xs={12} md={8}>
-          <ChartComponent data={chartData} selectedDomain={selectedDomain} />
+          <Paper elevation={3} sx={{ height: '100%' }}>
+            <ChartComponent data={chartData} selectedDomain={selectedDomain} />
+          </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper elevation={3} sx={{ padding: 2 }}>
